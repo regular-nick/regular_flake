@@ -1,0 +1,92 @@
+palette = 'dracula'
+
+add_newline = false
+
+# $username\
+# $hostname\
+format = """
+$sudo\
+$directory\
+$fill\
+$status\
+$cmd_duration\
+$git_branch\
+$git_state\
+$git_status\
+$time\
+$python\
+$line_break\
+$character"""
+
+right_format = """$all"""
+continuation_prompt = "[>>](bright-yellow)"
+
+[status]
+disabled = false
+symbol = 'X '
+
+[time]
+disabled = false
+format = '[$time]($style)'
+style = 'grey'
+
+[username]
+show_always = true
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+format = '[@$hostname $ssh_symbol]($style)'
+
+[sudo]
+disabled = false
+symbol = 'su'
+format = '[$symbol ]($style)'
+
+[directory]
+style = "blue"
+read_only = ' (ro) '
+truncation_symbol = '../'
+# fish_style_pwd_dir_length = 2
+
+[fill]
+symbol = ' '
+
+[character]
+success_symbol = "[>](green)"
+error_symbol = "[>](bold red)"
+vimcmd_symbol = "[<](yellow)"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "bold yellow"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = ""
+untracked = ""
+modified = ""
+staged = ""
+renamed = ""
+deleted = ""
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "grey"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+
+[nix_shell]
+symbol = "* "
+
+[palettes.dracula]
+grey = '#414558'
+# might add other colors if needed
