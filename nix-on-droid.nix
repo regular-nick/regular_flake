@@ -22,6 +22,7 @@
     hostname
     man 
     gnugrep
+    gnumake
     gnupg
     gnused
     gnutar
@@ -30,7 +31,7 @@
     xz
     zip
     unzip
-    tinycc
+    gcc
     openssh
   ];
 
