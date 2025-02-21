@@ -15,6 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -22,10 +23,18 @@
     };
   };
 
-  outputs = { self, nixpkgs-unstable, home-manager-unstable, nix-on-droid }: {
+
+    nix-on-droid-unstable = {
+      url = "github:nix-community/nix-on-droid/master";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.home-manager.follows = "home-manager-unstable";
+    };
+  };
+
+  outputs = { self, nixpkgs, home-manager, nix-on-droid }: {
 
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-      pkgs = import nixpkgs-unstable { system = "aarch64-linux"; };
+      pkgs = import nixpkgs { system = "aarch64-linux"; };
       modules = [ ./nix-on-droid.nix ];
     };
 
