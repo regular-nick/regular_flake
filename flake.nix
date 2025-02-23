@@ -32,7 +32,9 @@
 
   outputs = inputs@{ self, ... } : {
 
-    nixOnDroidConfigurations.default = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
+    
+
+    nixOnDroidConfigurations.default = inputs.nix-on-droid-unstable.lib.nixOnDroidConfiguration {
       pkgs = import inputs.nixpkgs-unstable { system = "aarch64-linux"; };
       modules = [ ./nix-on-droid.nix ];
     };
